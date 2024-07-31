@@ -21,4 +21,5 @@ and no, im not dev or anything, i just wanted to say that
 [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
 [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
 
-// main repository - [click here](https://github.com/discord-bot-studio/mods)
+//  
+> main repository - [click here](https://github.com/discord-bot-studio/mods)
