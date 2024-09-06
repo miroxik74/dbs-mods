@@ -11,8 +11,8 @@ Hmm... Simply put, because every time you'll open the app or start your bot, the
 [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
  
 > main repository - [click here](https://github.com/discord-bot-studio/mods) 
-
-
+ 
+ 
 Also big thanksies for everyone's work!!! ^-^  
 *if not for you, this app would be dead a loooong time ago...*
 
