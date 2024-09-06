@@ -1,5 +1,3 @@
-const { Guild, Client } = require("discord.js");
-counter = 0;
 module.exports = {
     name: "Edited Author Only Channel",
     author: ["STR1KE#4115", "."],
@@ -44,6 +42,8 @@ module.exports = {
         console.log(">> Loaded Edited Author Only Channel 2.0");
     },
     mod: function(DBS, message, action, args, command, index) {
+        const { Guild, Client } = require("discord.js");
+        counter = 0;
         counter++;
         const chname = DBS.BetterMods.parseAction(action.chname1, message)
         const chcategory = DBS.BetterMods.parseAction(action.chcategory1, message)

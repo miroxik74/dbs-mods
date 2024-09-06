@@ -1,8 +1,8 @@
 module.exports = {
     name: "Bot Type",
-    author: ["koki1019#0005"],
+    author: ["koki1019#0005", "@miroxik74"],
     version: "1.0.1",
-    changelog: "none",
+    changelog: "Fixed",
     isEvent: false,
     isResponse: true,
     isMod: true,
@@ -20,13 +20,13 @@ module.exports = {
         `;
     },
     init: function() {
-        console.log("Loaded send message");
+        console.log("Loaded typing");
     },
-    mod: function(DBS, message, action, args, command, index) {
+    mod: async function(DBS, message, action, args, command, index) {
         var delay = action.time * 1000
-        message.channel.startTyping();
-        setTimeout(function() {
-            message.channel.stopTyping();
+        await message.channel.sendTyping();
+        setTimeout(async function() {
+            await message.channel.sendTyping();
             DBS.callNextAction(command, message, args, index + 1);
         }, delay);
     }

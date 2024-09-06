@@ -1,4 +1,3 @@
-const Discord = require('discord.js')
 module.exports = {
     name: "Ticket Mod",
     author: [".", "Miro#5410"],
@@ -143,6 +142,7 @@ module.exports = {
     init: function() { console.log(">> Loaded Ticket mod"); },
 
     mod: function(DBS, message, action, args, command, index) {
+        const Discord = require('discord.js');
         const embed = new Discord.MessageEmbed().setColor(DBS.BetterMods.parseAction(action.embed__clr, message)).setTitle(DBS.BetterMods.parseAction(action.embed__tit, message)).setURL(DBS.BetterMods.parseAction(action.embed__url, message)).setAuthor(DBS.BetterMods.parseAction(action.embed__an, message), DBS.BetterMods.parseAction(action.embed__al, message), DBS.BetterMods.parseAction(action.embed__ai, message)).setDescription(DBS.BetterMods.parseAction(action.embed__des, message)).setThumbnail(DBS.BetterMods.parseAction(action.embed__thumb, message)).setImage(DBS.BetterMods.parseAction(action.embed__img, message)).setFooter(DBS.BetterMods.parseAction(action.embed__footer, message))
         message.channel.send(embed).then(msg => {
             msg.react(DBS.BetterMods.parseAction(action.embed__emoji, message))

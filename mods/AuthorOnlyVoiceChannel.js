@@ -1,5 +1,3 @@
-const { Guild, Client } = require("discord.js");
-counter = 0;
 module.exports = {
     name: "Author Only Voice Channel",
     author: ["zCuzImJonas#1010"],
@@ -42,6 +40,8 @@ module.exports = {
         console.log("Loaded Edited Author Only Channel");
     },
     mod: function(DBS, message, action, args, command, index) {
+        const { Guild, Client } = require("discord.js");
+        counter = 0;
         message.guild.channels.create(action.chname, {
             type: 'voice',
         }).then(channel => {

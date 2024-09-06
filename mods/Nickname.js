@@ -1,4 +1,3 @@
-const { Guild, Client } = require("discord.js");
 module.exports = {
     name: "Nickname",
     author: ["STR1KE#6969"],
@@ -27,6 +26,7 @@ module.exports = {
         console.log("Loaded Nickname");
     },
     mod: function(DBS, message, action, args, command, index) {
+        const { Guild, Client } = require("discord.js");
         var id = action.nick;
         id = id.replace("$$args$$", args);
         message.member.setNickname(id);

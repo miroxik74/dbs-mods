@@ -1,5 +1,3 @@
-const { error } = require("console");
-
 module.exports = {
     name: "Up Time",
     author: ["Big D#1129"],
@@ -49,6 +47,7 @@ module.exports = {
     },
 
     mod: function(DBS, msg, action, args, command, index) {
+        const { error } = require("console");
         const bottime = DBS.Bot.uptime;
         console.log(action)
         switch(action.collecttype) {

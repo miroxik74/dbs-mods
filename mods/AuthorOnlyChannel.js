@@ -1,4 +1,3 @@
-const { Guild, Client } = require("discord.js");
 module.exports = {
     name: "Author Only Channel",
     author: ["STR1KE#4115"],
@@ -28,6 +27,7 @@ module.exports = {
         console.log("Loaded Author Only Channel");
     },
     mod: function(DBS, message, action, args, command, index) {
+        const { Guild, Client } = require("discord.js");
         message.guild.channels.create(action.chname, {
             type: 'text',
             permissionOverwrites: [

@@ -1,4 +1,3 @@
-const { Client, DiscordAPIError } = require("discord.js");
 module.exports = {
     name: "To fixed",
     author: ["STR1KE#6969"],
@@ -47,7 +46,8 @@ module.exports = {
     // Place your mod here.
     mod: async function(DBS, message, action, args, command, index) {
      
-       var msg = await DBS.BetterMods.parseAction(action.value, message);
+        const { Client, DiscordAPIError } = require("discord.js");
+        var msg = await DBS.BetterMods.parseAction(action.value, message);
         DBS.BetterMods.saveVar(action.vartype, action.storeresult,  parseFloat(msg).toFixed(await DBS.BetterMods.parseAction(action.length, message)), message.guild)
 
        await DBS.callNextAction(command, message, args, index + 1);

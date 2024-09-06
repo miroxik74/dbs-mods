@@ -1,4 +1,3 @@
-const { Client, DiscordAPIError } = require("discord.js");
 module.exports = {
     name: "Jump To Node",
     author: ["STR1KE#6969"],
@@ -26,6 +25,7 @@ module.exports = {
         console.log("Loaded JumpToNode");
     },
     mod: async function(DBS, message, action, args, command, index) {
-       DBS.callNextAction(command, message, args, command.actions.indexOf(command.actions.find(e=>e.name==action.value)));
-      }
+        const { Client, DiscordAPIError } = require("discord.js");
+        DBS.callNextAction(command, message, args, command.actions.indexOf(command.actions.find(e=>e.name==action.value)));
+    }
 };

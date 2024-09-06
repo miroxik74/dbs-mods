@@ -1,4 +1,3 @@
-const { Client, DiscordAPIError } = require("discord.js");
 module.exports = {
     name: "Created At",
     author: ["STR1KE#6969"],
@@ -39,6 +38,7 @@ module.exports = {
         console.log("Loaded antiraid mod");
     },
     mod: async function(DBS, message, action, args, command, index) {
+        const { Client, DiscordAPIError } = require("discord.js");
         var msg = await DBS.BetterMods.parseAction(action.value, message)
         DBS.BetterMods.saveVar(action.vartype, action.storeresult,  message.guild.members.cache.get(msg).user.createdAt, message.guild)
         .then (DBS.callNextAction(command, message, args, index + 1));

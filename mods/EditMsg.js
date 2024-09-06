@@ -1,4 +1,3 @@
-const { Guild, Client } = require("discord.js");
 module.exports = {
     name: "Edit Msg",
     author: ["STR1KE#6969"],
@@ -35,10 +34,12 @@ module.exports = {
         console.log("Loaded EditMsg");
     },
     mod: function(DBS, message, action, args, command, index) {
-    msg = message.channel.send(action.mes);
-    const delay = action.del * 1000;
-    setTimeout(function() {
-        msg.then(((sentMessage) => sentMessage.edit(action.editmes)))
-    }, delay);
-    DBS.callNextAction(command, message, args, index - action.nodes);
-}};
+        const { Guild, Client } = require("discord.js");
+        msg = message.channel.send(action.mes);
+        const delay = action.del * 1000;
+        setTimeout(function() {
+            msg.then(((sentMessage) => sentMessage.edit(action.editmes)))
+        }, delay);
+        DBS.callNextAction(command, message, args, index - action.nodes);
+    }
+};
