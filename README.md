@@ -12,6 +12,7 @@ just to be clear...
 > [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
 
 > main repository - [click here](https://github.com/discord-bot-studio/mods)  
+> how to download mods - [click here](https://github.com/discord-bot-studio/mods?tab=readme-ov-file#to-install-mods)
 
 ---  
 
