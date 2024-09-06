@@ -35,8 +35,9 @@ module.exports = {
         
             <h4 style="margin-top: 10px;">Text</h4>
         
-            <label for="imagetextcolorpicker" style="text-decoration: line-through; color: gray;">Captcha text color</label>
-            <h6 style="color: gray;"></h6>
+            <label for="imagetextcolorpicker">Captcha text color</label>
+            <input type="color" onchange="document.getElementById('imagetextcolor').value = this.value.slice(1)" id="imagetextcolorpicker" name="imagetextcolorpicker">
+            <input type="text" onchange="document.getElementById('imagetextcolorpicker').value = '#' + this.value" id="imagetextcolor" name="imagetextcolor" class="form-control">
         
             <label for="opacityrange">Captcha text opacity</label>
             <input onchange="document.getElementById('opacitypercantage').innerHTML = this.value + '%'" style="margin-top: 15px;" type="range" name="opacityrange" id="opacityrange" step="5" min="0" max="100">
@@ -44,27 +45,33 @@ module.exports = {
         
             <h4 style="margin-top: 10px;">Line</h4>
         
-            <label for="imagelinecolorpicker" style="text-decoration: line-through; color: gray;">Captcha line color</label>
-            <h6 style="color: gray;"></h6>
+            <label for="imagelinecolorpicker">Captcha line color</label>
+            <input type="color" onchange="document.getElementById('imagelinecolor').value = this.value.slice(1)" id="imagelinecolorpicker" name="imagelinecolorpicker">
+            <input type="text" onchange="document.getElementById('imagelinecolorpicker').value = '#' + this.value" id="imagelinecolor" name="imagelinecolor" class="form-control">
         
-            <label for="lineopacityrange" style="text-decoration: line-through; color: gray;">Captcha line opacity</label>
-            <h6 style="color: gray;"></h6>
+            <label for="lineopacityrange">Captcha line opacity</label>
+            <input onchange="document.getElementById('lineopacitypercantage').innerHTML = this.value + '%'" style="margin-top: 15px;" type="range" name="lineopacityrange" id="lineopacityrange" step="5" min="0" max="100">
+            <label id="lineopacitypercantage" for="lineopacityrange">%</label>
         
             <h4 style="margin-top: 10px;">Decoy</h4>
         
-            <label for="imagedecoycolorpicker" style="text-decoration: line-through; color: gray;">Captcha decoy color</label>
-            <h6 style="color: gray;"></h6>
+            <label for="imagedecoycolorpicker">Captcha decoy color</label>
+            <input type="color" onchange="document.getElementById('imagedecoycolor').value = this.value.slice(1)" id="imagedecoycolorpicker" name="imagedecoycolorpicker">
+            <input type="text" onchange="document.getElementById('imagedecoycolorpicker').value = '#' + this.value" id="imagedecoycolor" name="imagedecoycolor" class="form-control">
         
             <label for="decoyopacityrange">Captcha decoy opacity</label>
             <input onchange="document.getElementById('decoyopacitypercantage').innerHTML = this.value + '%'" style="margin-top: 15px;" type="range" name="decoyopacityrange" id="decoyopacityrange" step="5" min="0" max="100">
             <label id="decoyopacitypercantage" for="decoyopacityrange">%</label>
             <br></br>
 
-            <label for="decoysizerange" style="text-decoration: line-through; color: gray;">Captcha decoy size</label>
-            <h6 style="color: gray;"></h6>
+            <label style="margin-left: 50px;" for="decoysizerange">Captcha decoy size</label>
+            <input onchange="document.getElementById('decoysizepercantage').innerHTML = this.value" style="margin-top: 15px;" type="range" name="decoysizerange" id="decoysizerange" min="0" max="100">
+            <label id="decoysizepercantage" for="decoysizerange"></label>
+            <br></br>
         
-            <label for="decoytotalrange" style="text-decoration: line-through; color: gray;">Captcha total decoys</label>
-            <h6 style="color: gray;"></h6>
+            <label style="margin-top: -20px;" for="decoytotalrange">Captcha total decoys</label>
+            <input onchange="document.getElementById('decoytotalpercantage').innerHTML = this.value" style="margin-top: 15px;" type="range" name="decoytotalrange" id="decoytotalrange" step="5" min="0" max="100">
+            <label id="decoytotalpercantage" for="decoytotalrange"></label>
         </div>
         
         <div id="messageblock" style="display: none;">
@@ -317,12 +324,12 @@ module.exports = {
                 code = "defaultcode";
         }
 
-        const captcha = new CaptchaGenerator();
-        captcha.async = true;
-        captcha.setDecoy({
-            opacity: parseInt(action.decoyopacityrange) / 100,
-        });
-        captcha.setCaptcha({ text: code });
+        console.log(code);
+
+        const captcha = new CaptchaGenerator()
+            .setCaptcha({text: code, color: `#${action.imagetextcolor}`, opacity: parseInt(action.opacityrange) / 100})
+            .setDecoy({color: `#${action.imagedecoycolor}`, opacity: parseInt(action.decoyopacityrange) / 100, size: parseInt(action.decoysizerange), size: action.decoysizerange, total: parseInt(action.decoytotalrange)},)
+            .setTrace({color: `#${action.imagelinecolor}`, opacity: parseInt(action.lineopacityrange) / 100});
 
         const buffer = await captcha.generate();
         fs.writeFileSync("captcha.png", buffer);
@@ -402,5 +409,5 @@ module.exports = {
                 DBS.BetterMods.saveVar("temp", "captcha", "false", message.guild);
                 DBS.callNextAction(command, message, args, index + 1);
             });
-    }
+        }
 };
