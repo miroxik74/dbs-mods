@@ -6,6 +6,13 @@ btw, `AAA_BetterMods.js` overwrites the data from `bot.js` file so keep in mind 
 > Oh, why not in bot.js?   
 Hmm... Simply put, because every time you'll open the app or start your bot, then the changes you made to the code will be undone
 
+> One more note just to be clear...  
+[example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
+[mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
+ 
+> main repository - [click here](https://github.com/discord-bot-studio/mods) 
+
+
 Also big thanksies for everyone's work!!! ^-^  
 *if not for you, this app would be dead a loooong time ago...*
 
@@ -16,10 +23,3 @@ Also big thanksies for everyone's work!!! ^-^
 > Community on discord server
 
 and no, im not dev or anything, i just wanted to say that
-
-> One more note just to be clear...  
-[example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
-[mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
-
-//  
-> main repository - [click here](https://github.com/discord-bot-studio/mods)
