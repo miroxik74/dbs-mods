@@ -365,7 +365,6 @@ module.exports = {
             }
         });
         DBS.Bot.on("messageDelete", message => {
-            console.log("message deleted");
             let guildVars = {};
             guildVars.guild = message.guild;
             guildVars.message = message;
