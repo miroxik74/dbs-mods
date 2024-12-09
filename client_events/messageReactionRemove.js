@@ -5,7 +5,7 @@
 4. Results
 5. Create a file with any name, this will be your loader to fetch desired channel, message and reactions from it
 6. Create a file with any name, this will be the actual code that is executed when someone removed reaction
-> for unicode emoji you can use https://getemoji.com/ or https://pl.piliapp.com/emoji/list/
+> for unicode emoji you can use https://getemoji.com or https://pl.piliapp.com/emoji/list
 
 That's all you need to know, thanks for reading and good luck :)
 */
