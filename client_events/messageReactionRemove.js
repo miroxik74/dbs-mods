@@ -96,7 +96,6 @@ module.exports = {
             if (message.id === messageId1 && channel.id === channelId1) {
                 const userHasReacted = await message.guild.members.fetch(user.id);
 
-                // for unicode you can use https://getemoji.com/ or https://pl.piliapp.com/emoji/list/
                 if (emoji === 'SET_EMOJI_NAME_OR_PASTE_IF_UNICODE') {
                     const role = userHasReacted.guild.roles.cache.get('SET_ROLE_ID');
                     if (role && userHasReacted) {
