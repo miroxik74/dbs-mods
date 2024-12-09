@@ -45,9 +45,9 @@ partials: [
 // 5.
 module.exports = {
     name: "ready",
-    author: ["334671104704774154"],
+    author: [""],
     version: "1.0.0",
-    changelog: "for 556130039876419604",
+    changelog: "",
     isEvent: true,
     isResponse: false,
     isMod: true,
@@ -69,9 +69,9 @@ module.exports = {
 // 6.
 module.exports = {
     name: "messageReactionRemove",
-    author: ["334671104704774154"],
+    author: [""],
     version: "1.0.0",
-    changelog: "for 556130039876419604",
+    changelog: "",
     isEvent: true,
     isResponse: false,
     isMod: true,
