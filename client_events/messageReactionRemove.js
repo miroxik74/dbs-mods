@@ -60,9 +60,13 @@ module.exports = {
     init: async function (DBS) {
     },
     mod: async function (DBS) {
-        const channel = await DBS.channels.fetch('CHANNEL_ID');
-        const message = await channel.messages.fetch('MESSAGE_ID');
-        const reactions = await message.reactions.cache.get();
+        try {
+            const channel = await DBS.channels.fetch('CHANNEL_ID');
+            const message = await channel.messages.fetch('MESSAGE_ID');
+            const reactions = await message.reactions.cache.get();
+        } catch (error) {
+            return console.log(error);
+        }
     }
 };
 
