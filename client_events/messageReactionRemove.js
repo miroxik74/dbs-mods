@@ -1,8 +1,8 @@
 /* To make it work:
 1. Open AAA_BetterMods.js
-2. Find:
-3. Make new line and paste:
-4. Results:
+2. Find
+3. Make new line and paste
+4. Results
 5. Create a file with any name, this will be your loader to fetch desired channel, message and reactions from it
 6. Create a file with any name, this will be the actual code that is executed when someone removed reaction
 > for unicode emoji you can use https://getemoji.com/ or https://pl.piliapp.com/emoji/list/
