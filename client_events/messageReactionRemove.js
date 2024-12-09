@@ -60,8 +60,8 @@ module.exports = {
     init: async function (DBS) {
     },
     mod: async function (DBS) {
-        const channel = await DBS.channels.fetch('SET_CHANNEL_ID');
-        const message = await channel.messages.fetch('SET_MESSAGE_ID');
+        const channel = await DBS.channels.fetch('CHANNEL_ID');
+        const message = await channel.messages.fetch('MESSAGE_ID');
         const reactions = await message.reactions.cache.get();
     }
 };
@@ -84,8 +84,8 @@ module.exports = {
     init: async function (DBS) {
     },
     mod: async function (DBS, reaction, user) {
-        const channelId1 = 'SET_CHANNEL_ID';
-        const messageId1 = 'SET_MESSAGE_ID';
+        const channelId1 = 'CHANNEL_ID';
+        const messageId1 = 'MESSAGE_ID';
         const message = reaction.message;
         const emoji = reaction.emoji.name;
         const guild = await message.guild.fetch();
@@ -96,8 +96,8 @@ module.exports = {
             if (message.id === messageId1 && channel.id === channelId1) {
                 const userHasReacted = await message.guild.members.fetch(user.id);
 
-                if (emoji === 'SET_EMOJI_NAME_OR_PASTE_IF_UNICODE') {
-                    const role = userHasReacted.guild.roles.cache.get('SET_ROLE_ID');
+                if (emoji === 'EMOJI_NAME_OR_PASTE_IF_UNICODE') {
+                    const role = userHasReacted.guild.roles.cache.get('ROLE_ID');
                     if (role && userHasReacted) {
                         await userHasReacted.roles.remove(role);
                     }
