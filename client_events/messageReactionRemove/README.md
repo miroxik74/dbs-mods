@@ -1,4 +1,4 @@
-To make it work as it should be:
+To make it work:
 
 1. Open AAA_BetterMods.js
 
