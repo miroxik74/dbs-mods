@@ -44,8 +44,8 @@ partials: [
 - [`reaction_executor.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionRemove/reaction_executor.js) - the actual code that is executed when someone removed reaction
 - [`reaction_loader.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionRemove/reaction_loader.js) - loader to fetch desired channel, message and reactions from it
 
-> For unicode emoji, you can use:
-* [getemoji.com](https://getemoji.com)
-* [piliapp](https://pl.piliapp.com/emoji/list)
+6. For unicode emoji, you can use:
++ [getemoji.com](https://getemoji.com)
++ [piliapp](https://pl.piliapp.com/emoji/list)
 
 That's all you need to know, thanks for reading and good luck :)
