@@ -46,6 +46,6 @@ partials: [
 
 6. For unicode emoji, you can use:
 + [getemoji.com](https://getemoji.com)
-+ [piliapp](https://pl.piliapp.com/emoji/list)
++ [piliapp.com](https://pl.piliapp.com/emoji/list)
 
 That's all you need to know, thanks for reading and good luck :)
