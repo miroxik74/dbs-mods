@@ -1,6 +1,6 @@
 To make it work:
 
-1. Open AAA_BetterMods.js
+1. If downloaded, open [`AAA_BetterMods.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/AAA_BetterMods.js)
 
 2. Find
 ```
