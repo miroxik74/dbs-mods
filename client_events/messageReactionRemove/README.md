@@ -40,7 +40,7 @@ partials: [
         });
 ```
 
-5. Download those files and add them to the `mods` folder:  
+5. Download those two files and add them to the `mods` folder:  
 - [`reaction_executor.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionRemove/reaction_executor.js) - the actual code that is executed when someone removed reaction
 - [`reaction_loader.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionRemove/reaction_loader.js) - loader to fetch desired channel, message and reactions from it
 
