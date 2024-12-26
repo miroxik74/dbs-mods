@@ -40,9 +40,9 @@ partials: [
         });
 ```
 
-5. Download those files and add them to the `mods` folder:
-`>` `reaction_loader.js` - this will be your loader to fetch desired channel, message and reactions from it
-`>` `reaction_executor.js`, this will be the actual code that is executed when someone removed reaction
+5. Download those files and add them to the `mods` folder:  
+- `reaction_loader.js` - this will be your loader to fetch desired channel, message and reactions from it
+- `reaction_executor.js`, this will be the actual code that is executed when someone removed reaction
 
 > For unicode emoji, you can use:
 * [getemoji.com](https://getemoji.com)
