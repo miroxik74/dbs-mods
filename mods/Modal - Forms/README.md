@@ -3,7 +3,6 @@
 2. It works only for slash command because the instruction was created for slash but you can do it for button too
   
 Let's start then:  
-
 1. Make sure you have installed `discord.js@13.17.1`
 - if not, open cmd within your botfiles folder and run `npm install discord.js@13.17.1`
 
