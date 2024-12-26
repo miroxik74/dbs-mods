@@ -4,7 +4,7 @@
   
 Let's start then:  
 1. Make sure you have installed `discord.js@13.17.1`
-- if not, open cmd within your botfiles folder and run `npm install discord.js@13.17.1`
+- if not, open cmd within your BotFiles folder and run `npm install discord.js@13.17.1`
 
 2. `BotFiles` -> `BotData` -> `commands` -> Create folder `command-functions` and there add 2 files:
 - [`modalForm.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/Modal-Forms/modalForm.js) - the form that the user will see when they interact with the slash command
