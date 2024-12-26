@@ -44,6 +44,8 @@ partials: [
 `>` `reaction_loader.js` - this will be your loader to fetch desired channel, message and reactions from it
 `>` `reaction_executor.js`, this will be the actual code that is executed when someone removed reaction
 
-> For unicode emoji, you can use [getemoji.com](https://getemoji.com) or [piliapp](https://pl.piliapp.com/emoji/list)
+> For unicode emoji, you can use:
+* [getemoji.com](https://getemoji.com)
+* [piliapp](https://pl.piliapp.com/emoji/list)
 
 That's all you need to know, thanks for reading and good luck :)
