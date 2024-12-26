@@ -7,8 +7,8 @@ Let's start then:
 - if not, open cmd within your botfiles folder and run `npm install discord.js@13.17.1`
 
 2. `BotFiles` -> `BotData` -> `commands` -> Create folder `command-functions` and there add 2 files:
-- [`modalForm.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/Modal%20-%20Forms/modalForm.js) - the form that user will get after interacting with slash command
-- [`modalOutput.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/Modal%20-%20Forms/modalOutput.js) - the results of what is executed after the user sent the form
+- [`modalForm.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/Modal-Forms/modalForm.js) - the form that user will get after interacting with slash command
+- [`modalOutput.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/Modal-Forms/modalOutput.js) - the results of what is executed after the user sent the form
 
 3. In BSD app, create new slash command with name `modal` and Save changes
 
