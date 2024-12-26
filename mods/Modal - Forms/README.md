@@ -17,7 +17,7 @@ Let's start then:
 DBS.Bot.on("interactionCreate", async interaction => {
 ```
 
-5. Above the line `//interaction.followUp({ content: "hello" });`, but under `else {` , press Enter (to start new line) and paste:
+5. Above the line `//interaction.followUp({ content: "hello" });`, but under `else {` , press Enter to start new line and paste:
 ```
             if (interaction.commandName === 'modal') {
                 const { modalForm } = require("./BotData/commands/command-functions/modalForm");
