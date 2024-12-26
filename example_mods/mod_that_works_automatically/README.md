@@ -1,4 +1,4 @@
-`name` - This has to be the Client Event name. [Check the docs](https://discord.js.org/docs/packages/discord.js/stable/ClientEvents:Interface)
+`name` - This has to be the Client Event name. [Check the list](https://discord.js.org/docs/packages/discord.js/stable/ClientEvents:Interface)
 
 `author` - Place the author of the mod here. This is an array so you can add other authors by writing ["Great Plains Modding", "New User"]
 
