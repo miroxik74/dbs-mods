@@ -17,6 +17,7 @@ module.exports = {
     mod: async function (DBS, reaction, user) {
         const channelId1 = 'CHANNEL_ID';
         const messageId1 = 'MESSAGE_ID';
+        
         const message = reaction.message;
         const emoji = reaction.emoji.name;
         const guild = await message.guild.fetch();
