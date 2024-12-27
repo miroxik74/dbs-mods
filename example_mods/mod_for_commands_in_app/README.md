@@ -4,8 +4,8 @@ The `.js` file:
 `>` name must be this value with spaces removed  
 
 -- example:  
-If value === name: "Message Mod"
-then file name should be === MessageMod.js
+If value === `name: "Message Mod"`
+then file name should be === `MessageMod.js`
 
 **Values:**  
 `name` - Set this to the name of the mod. This is what will be shown inside of BSD.  
