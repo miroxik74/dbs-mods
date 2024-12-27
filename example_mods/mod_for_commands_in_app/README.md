@@ -2,8 +2,8 @@
 The `.js` file has to be inside `mods` folder
 
 **Values:**  
-`name` - Set this to the name of the mod. This is what will be shown inside of BSD.
-        THIS FILE NAME MUST BE THIS VALUE WITH SPACES REMOVED
+`name` - Set this to the name of the mod. This is what will be shown inside of BSD.  
+THIS FILE NAME MUST BE THIS VALUE WITH SPACES REMOVED
 
 `author` - Place the author of the mod here but not required. This is an array so you can add other authors by writing ["Great Plains Modding", "New User"]
 
