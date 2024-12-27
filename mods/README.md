@@ -40,4 +40,5 @@ They won't show in BSD but the mod function is still called.
 
 ## FAQ
 - Why is my mod not showing up in DBS?  
-> Make sure you have "`isMod`" set to `true` and that your mod file mates your mod name. For an example if my mod was called "`Example Mod`" my mod file name would be "`ExampleMod.js`".
+> Make sure you have "`isMod`" set to `true` and that your mod file mates your mod name.  
+For example, if my mod was called "`Example Mod`" my mod file name would be "`ExampleMod.js`".
