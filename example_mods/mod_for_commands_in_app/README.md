@@ -1,7 +1,7 @@
 **Note:**  
 The `.js` file:  
-> has to be inside `mods` folder 
-> name must be this value with spaces removed  
+`>` has to be inside `mods` folder  
+`>` name must be this value with spaces removed  
 
 -- example:  
 If value name === name: "Message Mod"
