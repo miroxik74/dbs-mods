@@ -4,7 +4,7 @@ The `.js` file:
 `>` name must be `name` value but with spaces removed  
 
 -- example:  
-If value === `name: "Message Mod"`
+If value === `name: "Message Mod"`  
 then file name should be === `MessageMod.js`
 
 **Values:**  
