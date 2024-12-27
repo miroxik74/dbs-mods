@@ -11,7 +11,7 @@ Oh, why not in bot.js?
 just to be clear...
 > [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
 > [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods  
-> [click here to download mods](https://github.com/miroxik74/dbs-mods/releases/download/mods/mods.zip) - the folder `Modals-Forms` is **not** included
+> [how to install mods](https://github.com/miroxik74/dbs-mods/blob/main/mods/README.md)
  
 > [main repository](https://github.com/discord-bot-studio/mods) 
 
