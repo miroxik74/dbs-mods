@@ -10,7 +10,7 @@ If you want to do some changes for `interactionCreate` event and you have `AAA_B
 Oh, why not in `bot.js` ?
 > Hmm... Simply put, because it overwrites the data from `bot.js` and every time you'll open the app or start your bot, then the changes you made to the code will/may be undone  
 
-Some links:
+# Some links:
 > [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
 > [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods  
 > [how to install all mods](https://github.com/miroxik74/dbs-mods/blob/main/mods/README.md)
@@ -32,5 +32,5 @@ and no, im not dev or anything, i just wanted to say that :)
 
 ---  
 
-**!!!**  
+# !!!
 Please do not make any mod requests in my reposotory, join on the [discord server](discord.gg/CaywwdW) instead and use the appropriate channel there, thanks in advance!
