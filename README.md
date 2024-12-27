@@ -7,7 +7,7 @@ To avoid unnecessary struggling and errors, just put all of these mods into your
 If you want to do some changes for `interactionCreate` event and you have `AAA_BetterMods.js`, make them there, not in `bot.js`  
 
 Oh, why not in `bot.js` ?
-> Hmm... Simply put, because overwrites the data from `bot.js` and every time you'll open the app or start your bot, then the changes you made to the code will be undone  
+> Hmm... Simply put, because it overwrites the data from `bot.js` and every time you'll open the app or start your bot, then the changes you made to the code will/may be undone  
 
 just to be clear...
 > [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
