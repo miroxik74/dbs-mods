@@ -1,5 +1,5 @@
 Hey!  
-This repo has been created because i wanted to catch most of the mods but I do not guarantee that all work properly even if I changed some things to at least make them visible in the app which means you don't have to delete one to see another.
+This repo has been created because i wanted to catch most of the mods but I do not guarantee that all work properly even if I changed some things to at least make them visible in the app which means you don't have to delete one to see another and i want to inform you that in this repository you won't be able to find some mods from main repo because they're broken so i don't want them here.
 
 Generally, some mods require the "[Bettermods](https://github.com/miroxik74/dbs-mods/blob/main/mods/BetterMods.js)", "[Bettermods V2](https://github.com/miroxik74/dbs-mods/blob/main/mods/BetterModsV2.js)", or/and the "[AAA_Bettermods](https://github.com/miroxik74/dbs-mods/blob/main/mods/AAA_BetterMods.js)" mods.  
 To avoid unnecessary struggling and errors, just put all of these mods into your mods folder and have `discord.js@13.17.1` installed.  
