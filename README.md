@@ -33,4 +33,4 @@ and no, im not dev or anything, i just wanted to say that :)
 ---  
 
 **!!!**  
-Please do not make feature requests in my reposotory, join on the [discord server](discord.gg/CaywwdW) instead and use the appropriate channel there, thanks in advance!
+Please do not make any mod requests in my reposotory, join on the [discord server](discord.gg/CaywwdW) instead and use the appropriate channel there, thanks in advance!
