@@ -1,4 +1,4 @@
-# To install mods:
+# To install all mods:
 1. [Click here to start](https://github.com/miroxik74/dbs-mods/releases/download/mods/mods.zip) - the folder `Modals-Forms` is **not** included
 2. Choose the location where you have `mods` folder.
 3. Extract the downloaded `.zip` file.
@@ -6,6 +6,11 @@
 5. If you don't need some mods, delete them after extraction
 6. Done!
 
+# To install just bettermods:
+1. [Click here to start](https://github.com/miroxik74/dbs-mods/releases/download/bettermods/bettermods_only.zip)
+2. Choose the location where you have `mods` folder.
+3. Extract the downloaded `.zip` file.
+4. Done!
 
 # Development
 ## Variables
