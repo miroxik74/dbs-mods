@@ -2,7 +2,7 @@
 1. [Click here to start](https://github.com/miroxik74/dbs-mods/releases/download/mods/mods.zip) - the folder `Modals-Forms` is **not** included
 2. Choose the location where you have `mods` folder.
 3. Extract the downloaded `.zip` file.
-4. Now open BSD / restart the app / or just switch to the Home tab and again to the Commands to load them, and you will be able to add responses of the type of mod(s) you added, just like any other response in DBS. 
+4. Now open BSD / restart the app / or just switch to the Home tab and again to the Commands to load them, and you will be able to add responses of the type of mod(s) you added.
 5. If you don't need some mods, delete them after extraction
 6. Done!
 
