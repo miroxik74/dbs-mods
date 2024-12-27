@@ -1,3 +1,7 @@
+**Note:**
+The `.js` file has to be inside `mods` folder  
+
+**Values:**
 `name` - This has to be the Client Event name. [Check the list](https://discord.js.org/docs/packages/discord.js/stable/ClientEvents:Interface)
 
 `author` - Place the author of the mod here. This is an array so you can add other authors by writing ["Great Plains Modding", "New User"]
