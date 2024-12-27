@@ -3,8 +3,8 @@ The `.js` file:
 `>` has to be inside `mods` folder  
 `>` name must be `name` value but with spaces removed  
 
--- example:  
-If value === `name: "Message Mod"`  
+-- Example:  
+if value === `name: "Message Mod"`  
 then file name should be === `MessageMod.js`
 
 ---  
