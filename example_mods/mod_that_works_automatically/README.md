@@ -3,6 +3,8 @@ The `.js` file:
 `>` has to be inside `mods` folder  
 `>` name doesn't matter  
 
+---  
+
 **Values:**  
 `name` - This has to be the Client Event name. [Check the list](https://discord.js.org/docs/packages/discord.js/stable/ClientEvents:Interface)
 
