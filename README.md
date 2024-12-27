@@ -3,10 +3,11 @@ This repo has been created because i wanted to catch most of the mods but I do n
 
 Generally, some mods require the "[Bettermods](https://github.com/miroxik74/dbs-mods/blob/main/mods/BetterMods.js)", "[Bettermods V2](https://github.com/miroxik74/dbs-mods/blob/main/mods/BetterModsV2.js)", or/and the "[AAA_Bettermods](https://github.com/miroxik74/dbs-mods/blob/main/mods/AAA_BetterMods.js)" mods.  
 To avoid unnecessary struggling and errors, just put all of these mods into your mods folder and have `discord.js@13.17.1` installed.  
-`AAA_BetterMods.js` overwrites the data from `bot.js`, so keep that in mind if you (for example) want to do some changes for `interactionCreate` event, make them in `AAA_BetterMods.js`, not in `bot.js`  
+
+If you want to do some changes for `interactionCreate` event and you have `AAA_BetterMods.js`, make them there, not in `bot.js`  
 
 Oh, why not in bot.js?
-> Hmm... Simply put, because every time you'll open the app or start your bot, then the changes you made to the code will be undone  
+> Hmm... Simply put, because overwrites the data from `bot.js` and every time you'll open the app or start your bot, then the changes you made to the code will be undone  
 
 just to be clear...
 > [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
