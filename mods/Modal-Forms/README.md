@@ -23,9 +23,11 @@ DBS.Bot.on("interactionCreate", async interaction => {
                 const { modalForm } = require("./BotData/commands/modals/modalForm");
                 return modalForm(DBS, interaction);
             }
-            if (interaction.customId === 'myModal' && interaction.isModalSubmit()) {
-                const { modalOutput } = require("./BotData/commands/modals/modalOutput");
-                return modalOutput(DBS, interaction);
+            if (interaction.isModalSubmit()) {
+                if (interaction.customId === 'myModal' ) {
+                    const { modalOutput } = require("./BotData/commands/modals/modalOutput");
+                    return modalOutput(DBS, interaction);
+                }
             }
 ```
 
