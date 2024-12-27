@@ -10,8 +10,8 @@ Oh, why not in bot.js?
 
 just to be clear...
 > [example_mods](https://github.com/miroxik74/dbs-mods/tree/main/example_mods) - you will find a format of mods that you can use to create your own  
-> [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods
-> [how to download mods](https://github.com/discord-bot-studio/mods?tab=readme-ov-file#to-install-mods)
+> [mods](https://github.com/miroxik74/dbs-mods/tree/main/mods) - contains all mods  
+> [click here to download mods](https://github.com/miroxik74/dbs-mods/releases/download/mods/mods.zip) - the folder `Modals-Forms` is **not** included
  
 > [main repository](https://github.com/discord-bot-studio/mods) 
 
