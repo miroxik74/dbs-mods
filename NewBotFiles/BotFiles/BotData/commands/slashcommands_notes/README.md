@@ -14,8 +14,8 @@
 `>` Response message text: `Hello, Testing`
 
 ### Example 2:
-1. Create a slash command named `say`
-`>` Add option with name `text`
+1. Create a slash command named `say`  
+`>` Add option with name `text`  
 `>` Set two checkboxes as marked to turn on
 2. go to the `Events` tab
 3. for event `Command Interaction` add node `Switch Case`  
