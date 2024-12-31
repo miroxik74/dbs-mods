@@ -1,6 +1,6 @@
 ### Remember:
-1. When you create a slash command in BSD, make sure you retrieved the specific data from:
-`>` main `BotFiles\BotData\commands\commands.json` and update in new botfiles `slashcommands.json`
+1. When you create a slash command in BSD, make sure you retrieved the specific data from:  
+`>` main `BotFiles\BotData\commands\commands.json` and update in new botfiles `slashcommands.json`  
 `>` main `BotFiles\BotData\nodes` `eventnodes.json` + `events.json` and update in new botfiles `eventnodes.json` + `events.json`- there you can copy-paste everything
 
 ### Example 1:
