@@ -9,8 +9,8 @@
 3. for event `Command Interaction` add node `Switch Case`  
 `>` Variable to check: `${tempVars.commandinteraction.commandName}`  
 `>` Value: `test`  
-4. add node `Reply To Interaction With Message`
-`>` Interaction: `${tempVars.commandinteraction}`
+4. add node `Reply To Interaction With Message`  
+`>` Interaction: `${tempVars.commandinteraction}`  
 `>` Response message text: `Hello, Testing`
 
 ### Example 2:
