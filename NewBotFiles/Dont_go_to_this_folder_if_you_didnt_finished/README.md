@@ -1,6 +1,6 @@
 ### How to start?
 
-1. Download new *wait_for_repo_update_to_get_the_link*
+1. Download new [BotFiles](https://github.com/miroxik74/dbs-mods/releases/download/newbotfiles/BotFiles.zip)
 2. Go to `BotFiles\BotData\Settings\Settings.json`, set bot's token and prefix
 3. Go to `BotFiles`, hit the path bar above and type `cmd`
 4. Run:
