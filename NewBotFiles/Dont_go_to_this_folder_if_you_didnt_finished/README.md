@@ -8,7 +8,8 @@
 `2.` npm install discord.js@13.17.1  
 `3.` node bot  
 5. Refresh your Discord to make sure you see slash commands
-6. Try some commands!
+6. Try some commands!  
+(*you should know which ones because you read this [README](https://github.com/miroxik74/dbs-mods/tree/main/NewBotFiles), right?*)
 
 ### Any problems with those BotFiles? 😢
 Please go to the [discord server](discord.gg/CaywwdW) and let me know in DM's!
