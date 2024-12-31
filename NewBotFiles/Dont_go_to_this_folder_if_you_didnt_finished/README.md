@@ -10,5 +10,5 @@
 5. Refresh your Discord to make sure you see slash commands
 6. Try some commands!
 
-### Any problems with those BotFiles? 😦
+### Any problems with those BotFiles? 😢
 Please go to the [discord server](discord.gg/CaywwdW) and let me know in DM's!
