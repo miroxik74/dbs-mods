@@ -8,5 +8,5 @@ So you can create commands and nodes in the BSD as you have done so far, but the
 
 ---
 
-Have you finished reading **everything in `BotFiles`**?  
-If so, you can check the updated bot to see how it works! - *wait_for_repo_update_to_get_the_link*
+### Finished reading everything in `BotFiles` ?
+If so, you can check the updated bot to see how it works! - [Click](https://github.com/miroxik74/dbs-mods/tree/main/NewBotFiles/Dont_go_to_this_folder_if_you_didnt_finished)
