@@ -21,7 +21,7 @@ Also big thanksies for everyone's work!!! ^-^
 > [BlackTiger007](https://github.com/BlackTiger007)  
 > Community on discord server
 
-and no, im not dev or anything, i just wanted to say that :)
+and no, im not dev or anything, i just wanted to say that 😄
 
 ---  
 
@@ -34,4 +34,4 @@ and no, im not dev or anything, i just wanted to say that :)
 > [main repository](https://github.com/discord-bot-studio/mods)  
 
 # !!!
-Please do not make any mod requests in my reposotory, join on the [discord server](discord.gg/CaywwdW) instead and use the appropriate channel there, thanks in advance!
+Please do not make any mod requests in my reposotory, join on the [discord server](discord.gg/CaywwdW) instead and use the appropriate channel related to mods, thanks in advance!
