@@ -2,7 +2,7 @@
     Twitch Live Notifier Setup Instructions
 
     1. In Command Prompt, run: "npm install axios"
-    2. Go to [dev.twitch.tv/console](https://dev.twitch.tv/console) and sign in.
+    2. Go to https://dev.twitch.tv/console and sign in.
     3. Press on "Register Your Application".
     4. Fill in the required fields and note down your Client ID and Client Secret.
     5. Set the "OAuth Redirect URL" to "https://localhost".
@@ -15,7 +15,7 @@
         - livemessage: The message it'll send alongside the embed in the channel you specified (Your decision)
     7. Save this file and restart the bot. The mod will check every 10 seconds for the streamer going live.
 
-    Note: If you don't know how to get Discord IDs, go here: [support.discord.com/hc/en-us/articles/206346498](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID)
+    Note: If you don't know how to get Discord IDs, go here: https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID
 */
 
 module.exports = {
