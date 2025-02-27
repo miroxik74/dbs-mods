@@ -1,10 +1,10 @@
 Twitch Live Notifier Setup Instructions
 
-1. In Command Prompt, run: "`npm install axios`"
+1. In Command Prompt, run: `npm install axios`
 2. Go to [dev.twitch.tv/console](https://dev.twitch.tv/console) and sign in.
-3. Press on "Register Your Application".
+3. Press on `Register Your Application`.
 4. Fill in the required fields and note down your `Client ID` and `Client Secret`.
-5. Set the "OAuth Redirect URL" to "`https://localhost`".
+5. Set the `OAuth Redirect URL` to `https://localhost`.
 6. Manually edit this mod file (open it in a text editor) and fill in the following variables:
     - twitchClientid: Your Twitch API Client ID
     - twitchClientsecret: Your Twitch API Client Secret
