@@ -15,3 +15,6 @@ Twitch Live Notifier Setup Instructions
     7. Save this file (TwitchLiveNotifier.js) and restart the bot. The mod will check every 60 seconds for the streamer going live.
 
 Note: If you don't know how to get Discord IDs, go here: [support.discord.com/hc/en-us/articles/206346498](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID)
+---
+Any errors? 
+-> [README](https://github.com/miroxik74/dbs-mods/blob/main/README.md)
