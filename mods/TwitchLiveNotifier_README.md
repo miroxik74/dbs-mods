@@ -12,7 +12,7 @@
     - discordGuildId: Your Discord server’s ID
     - discordChannelId: The Discord channel ID to send notifications to
     - livemessage: The message it'll send alongside the embed in the channel you specified (Your decision)
-7. Save this file (TwitchLiveNotifier.js) and restart the bot. The mod will check every 60 seconds for the streamer going live.  
+7. Save changes in this file (TwitchLiveNotifier.js) and restart the bot. The mod will check every 60 seconds for the streamer going live.  
 
 Note:  
 If you don't know how to get Discord IDs, go here: [support.discord.com/hc/en-us/articles/206346498](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID)
