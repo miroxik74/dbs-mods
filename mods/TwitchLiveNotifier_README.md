@@ -1,4 +1,4 @@
-Twitch Live Notifier Setup Instructions
+### Twitch Live Notifier Setup Instructions
 
 1. In Command Prompt, run: `npm install axios`
 2. Go to [dev.twitch.tv/console](https://dev.twitch.tv/console) and sign in.
