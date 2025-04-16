@@ -1,5 +1,5 @@
 module.exports = {
-    name: "ChangeServerIcon",
+    name: "Change Server Icon",
     author: ["aoe#9022", "@miroxik74"],
     version: "1.0.1",
     changelog: "Added variables, checkboxes and fixed getting icon url",
