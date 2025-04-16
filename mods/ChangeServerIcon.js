@@ -20,7 +20,7 @@ module.exports = {
                         <a class="btn btn-outline-primary" role="button" id="variables" forinput="icon">Insert Variable</a>
                 </div>
             </div>
-            <p class="text-muted">Note:<br>Some images just won't work due to size or format so just use another url</p>
+            <p class="text-muted">Note:<br>Some images won't work due to size or format so just use another url</p>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="confirmation">
                 <label class="form-check-label">Click for confirmation!</label>
