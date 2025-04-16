@@ -2,7 +2,7 @@ module.exports = {
     name: "ChangeServerIcon",
     author: ["aoe#9022", "@miroxik74"],
     version: "1.0.1",
-    changelog: "Added variables and fixed getting icon url",
+    changelog: "Added variables, checkboxes and fixed getting icon url",
     isEvent: false,
     isResponse: true,
     isMod: true,
@@ -21,6 +21,15 @@ module.exports = {
                 </div>
             </div>
             <p class="text-muted">Note:<br>Some images just won't work due to size or format so just use another url</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="confirmation">
+                <label class="form-check-label">Click for confirmation!</label>
+            </div>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="error">
+                <label class="form-check-label">Click for error message!</label>
+            </div>
         </div>
         `;
     },
@@ -30,12 +39,17 @@ module.exports = {
     },
     mod: async function (DBS, message, action, args, command, index) {
 
+        const icon = DBS.BetterMods.parseAction(action.icon, message);
         try {
-            const icon = DBS.BetterMods.parseAction(action.icon, message);
             await message.guild.setIcon(icon);
+            if (action.confirmation !== "false") {
+                await message.reply({ content: `New icon has been successfully set!` });
+            }
         } catch (error) {
-            await message.reply(`${error}`);
             console.log(error);
+            if (action.error !== "false") {
+                await message.reply(`${error}`);
+            }
         }
 
         DBS.callNextAction(command, message, args, index + 1);
