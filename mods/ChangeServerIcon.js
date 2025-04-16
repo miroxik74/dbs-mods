@@ -48,7 +48,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
             if (action.error !== "false") {
-                await message.reply(`${error}`);
+                await message.reply({ content: `${error}` });
             }
         }
 
