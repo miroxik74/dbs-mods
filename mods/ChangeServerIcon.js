@@ -21,14 +21,14 @@ module.exports = {
                 </div>
             </div>
             <p class="text-muted">Note:<br>Some images won't work due to size or format so just use another url</p>
+            <label>Click below if you want to receive any of those messages</label>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="confirmation">
-                <label class="form-check-label">Click for confirmation!</label>
+                <label class="form-check-label">Confirmation</label>
             </div>
-            <br>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="error">
-                <label class="form-check-label">Click for error message!</label>
+                <label class="form-check-label">Rrror</label>
             </div>
         </div>
         `;
