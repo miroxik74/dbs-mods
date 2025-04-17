@@ -13,7 +13,7 @@ module.exports = {
         </div>
             </div>
                 <div class="col">
-                <label>Link of the new Server Profile(works with gifs too)</label>
+                <label>Link of the new Server Profile</label>
                     <div class="input-group mb-3">
                         <input class="form-control needed-field" name="icon"></input><br>
                         <div class="input-group-append">
@@ -39,19 +39,41 @@ module.exports = {
     },
     mod: async function (DBS, message, action, args, command, index) {
 
+        const fetch = require('node-fetch');
+        const guild = message.guild;
+        const attachment = message.attachments.first();
         const icon = DBS.BetterMods.parseAction(action.icon, message);
-        try {
-            await message.guild.setIcon(icon);
-            if (action.confirmation !== "false") {
+
+        async function conf(option) {
+            if (option !== "false") {
                 await message.reply({ content: `New icon has been successfully set!` });
             }
-        } catch (error) {
+            return;
+        }
+        async function err(option, error) {
             console.log(error);
-            if (action.error !== "false") {
+            if (option !== "false") {
                 await message.reply({ content: `${error}` });
             }
+            return;
         }
 
+        try {
+            if (attachment) {
+                const response = await fetch(attachment.url);
+                const buffer = await response.arrayBuffer();
+                const base64Image = Buffer.from(buffer).toString('base64');
+                const imageType = attachment.contentType.split('/')[1];
+                await guild.setIcon(`data:${imageType};base64,${base64Image}`);
+                await conf(action.confirmation);
+            } else if (icon) {
+                await guild.setIcon(icon);
+                await conf(action.confirmation);
+            }
+        } catch (error) {
+            await err(action.error, error);
+        }
+        
         DBS.callNextAction(command, message, args, index + 1);
     }
 };
