@@ -28,7 +28,7 @@ module.exports = {
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="error">
-                <label class="form-check-label">Rrror</label>
+                <label class="form-check-label">Error</label>
             </div>
         </div>
         `;
