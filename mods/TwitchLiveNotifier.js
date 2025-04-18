@@ -23,14 +23,16 @@ module.exports = {
         const twitchClientid = ''; // Your Twitch API Client ID
         const twitchClientsecret = ''; // Your Twitch API Client Secret
         const streamerName = ''; // The Twitch streamer’s username
-        const discordGuildId = await bot.guilds.fetch(''); // Your Discord server (guild) ID
-        const discordChannelId = discordGuildId.channels.cache.get(''); // The Discord channel ID for notifications
+        const discordGuildId = ''; // Your Discord server (guild) ID
+        const discordChannelId = ''; // The Discord channel ID for notifications
         const livemessage = ``; // The text message it'll send when you/steamer goes live
         // ***********************************************
 
-        setInterval(async () => {
-            if (!twitchClientid || !twitchClientsecret || !streamerName || !discordGuildId || !discordChannelId) return;
+        if (!twitchClientid || !twitchClientsecret || !streamerName || !discordGuildId || !discordChannelId) return;
+        const guildID = await bot.guilds.fetch(discordGuildId);
+        const chanID = guildID.channels.cache.get(discordChannelId);
 
+        setInterval(async () => {
             let previousStreamId = [];
             const streamidlocation = "./BotData/nodes/customevents/json/twitchLiveStream.json";
             const filePath = path.join(__dirname, '../', 'BotData', 'nodes', 'customevents', 'json', 'twitchLiveStream.json');
@@ -134,8 +136,8 @@ module.exports = {
                         .setURL(`${h}player.${ttv}/?channel=${streamerName}&parent=${ttv}`);
                     const buttonRow = new MessageActionRow().addComponents([watch1, watch2]);
 
-                    if (!previousStreamId.includes(stream.id) && discordChannelId) {
-                        await discordChannelId.send({ content: `${livemessage}`, embeds: [Embed], components: [buttonRow] });
+                    if (!previousStreamId.includes(stream.id) && chanID) {
+                        await chanID.send({ content: `${livemessage}`, embeds: [Embed], components: [buttonRow] });
                         previousStreamId.push(stream.id);
                         fs.writeFileSync(
                             streamidlocation,
