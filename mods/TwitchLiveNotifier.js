@@ -28,25 +28,26 @@ module.exports = {
         const livemessage = ``; // The text message it'll send when you/steamer goes live
         // ***********************************************
 
-        const h = `https://`;
-        const ttv = `twitch.tv`;
-        const api = `${h}api.${ttv}`;
-        let previousStreamId = [];
-        const streamidlocation = "./BotData/nodes/customevents/json/twitchLiveStream.json";
-        const filePath = path.join(__dirname, '../', 'BotData', 'nodes', 'customevents', 'json', 'twitchLiveStream.json');
-        if (!fs.existsSync(filePath)) {
-            console.log('Trying to create filePath...');
-            try {
-                fs.mkdirSync(path.dirname(filePath), { recursive: true });
-                fs.writeFileSync(filePath, '[]');
-                console.log(`File created at: ${filePath}`);
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
         setInterval(async () => {
-            if (!twitchClientid || !twitchClientsecret || !streamerName || !discordGuildId || !discordChannelId) { return; }
+            if (!twitchClientid || !twitchClientsecret || !streamerName || !discordGuildId || !discordChannelId) return;
+
+            let previousStreamId = [];
+            const streamidlocation = "./BotData/nodes/customevents/json/twitchLiveStream.json";
+            const filePath = path.join(__dirname, '../', 'BotData', 'nodes', 'customevents', 'json', 'twitchLiveStream.json');
+            if (!fs.existsSync(filePath)) {
+                console.log('Trying to create filePath...');
+                try {
+                    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+                    fs.writeFileSync(filePath, '[]');
+                    console.log(`File created at: ${filePath}`);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            const h = `https://`;
+            const ttv = `twitch.tv`;
+            const api = `${h}api.${ttv}`;
 
             try {
                 const gettokenresponse = await axios.post(
