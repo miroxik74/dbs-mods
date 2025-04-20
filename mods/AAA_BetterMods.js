@@ -33,7 +33,7 @@ module.exports = {
 
                 try {
                     const cliCommand = 'npm install ' + packageName + ' --save';
-                    await execSync(cliCommand, {
+                    const f = await execSync(cliCommand, {
                         cwd: join(__dirname),
                         stdio: [0, 1, 2]
                     });
@@ -42,11 +42,10 @@ module.exports = {
                     const modulePath = join(__dirname, "../node_modules", packageName);
                     return require(modulePath);
                 } catch (error) {
-                    console.log(error);
                     try {
                         await installPackage(packageName);
                     } catch (err) {
-                        console.log(error);
+                        console.error(err);
                         DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
                         return null;
                     }

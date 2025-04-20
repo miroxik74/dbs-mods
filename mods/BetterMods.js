@@ -33,7 +33,7 @@ module.exports = {
 
                 try {
                     const cliCommand = 'npm install ' + packageName + ' --save';
-                    await execSync(cliCommand, {
+                    const f = await execSync(cliCommand, {
                         cwd: join(__dirname),
                         stdio: [0, 1, 2]
                     });
@@ -42,11 +42,29 @@ module.exports = {
                     const modulePath = join(__dirname, "../node_modules", packageName);
                     return require(modulePath);
                 } catch (error) {
-                    console.log(error);
-                    DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
-                    return null;
+                    try {
+                        await installPackage(packageName);
+                    } catch (err) {
+                        console.error(err);
+                        DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
+                        return null;
+                    }
                 };
             };
+        };
+
+        async function installPackage(packageName) {
+            return new Promise((resolve, reject) => {
+                exec(`npm install ${packageName}`, (error, stdout, stderr) => {
+                    if (error) {
+                        console.error(`Error installing ${packageName}: ${error}`);
+                        reject(error);
+                    } else {
+                        console.log(`${packageName} installed successfully.`);
+                        resolve();
+                    }
+                });
+            });
         };
 
         DBS.BetterMods.parseAction = function(string, msg) {
