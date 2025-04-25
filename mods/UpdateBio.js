@@ -1,26 +1,26 @@
 module.exports = {
-    name: "Change Server Icon",
-    author: ["aoe#9022", "@miroxik74"],
-    version: "1.0.1",
-    changelog: "Added variables, checkboxes and fixed getting icon url",
+    name: "Update Bio",
+    author: ["@miroxik74"],
+    version: "1.0.0",
+    changelog: "",
     isEvent: false,
     isResponse: true,
     isMod: true,
     isAddon: false,
-    section: "Server Action",
+    section: "Bot Action",
+
     html: function (data) {
         return `
         </div>
             </div>
                 <div class="col">
-                <label>Link of the new Server Profile</label>
+                <label>Provide the text</label>
                     <div class="input-group mb-3">
-                        <input class="form-control needed-field" name="icon"></input><br>
+                        <input class="form-control needed-field" name="new_bio"></input><br>
                         <div class="input-group-append">
-                        <a class="btn btn-outline-primary" role="button" id="variables" forinput="icon">Insert Variable</a>
+                        <a class="btn btn-outline-primary" role="button" id="variables" forinput="new_bio">Insert Variable</a>
                 </div>
             </div>
-            <p class="text-muted">Note:<br>Some images won't work due to size or format so just use another url</p>
             <label>Click below if you want to receive any of those messages</label>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="confirmation">
@@ -33,20 +33,22 @@ module.exports = {
         </div>
         `;
     },
+
     init: async function (DBS) {
         if (!DBS.BetterMods) return console.log(`\x1b[36m [${this.name}.JS] \x1b[0m\x1b[31mBetterMods.js is not loaded. BetterMods.js is required to use this mod. \x1b[0m`);
-        console.log("Loaded Change Server Icon");
+        DBS.BetterMods.requireModule('axios');
+        console.log("Loaded Update Bio");
     },
+
     mod: async function (DBS, message, action, args, command, index) {
 
-        const fetch = require('node-fetch');
-        const guild = message.guild;
-        const attachment = message.attachments.first();
-        const icon = DBS.BetterMods.parseAction(action.icon, message);
+        const client = DBS ? DBS.Bot : DBS;
+        const axios = require('axios');
+        const new_bio = DBS.BetterMods.parseAction(action.new_bio, message);
 
         async function conf(option) {
             if (option !== "false") {
-                await message.reply({ content: `New icon has been successfully set!`, allowedMentions: { repliedUser: false } });
+                await message.reply({ content: `About me has been successfully updated!\n-# If you cannot see the changes, refresh your discord app!`, allowedMentions: { repliedUser: false } });
             }
             return;
         }
@@ -59,21 +61,23 @@ module.exports = {
         }
 
         try {
-            if (attachment) {
-                const response = await fetch(attachment.url);
-                const buffer = await response.arrayBuffer();
-                const base64Image = Buffer.from(buffer).toString('base64');
-                const imageType = attachment.contentType.split('/')[1];
-                await guild.setIcon(`data:${imageType};base64,${base64Image}`);
-                await conf(action.confirmation);
-            } else if (icon) {
-                await guild.setIcon(icon);
-                await conf(action.confirmation);
-            }
+            const response = await axios.patch(
+                `https://discord.com/api/v10/applications/${client.user.id}`,
+                {
+                    description: new_bio
+                },
+                {
+                    headers: {
+                        'Authorization': `Bot ${client.token}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            await conf(action.confirmation);
         } catch (error) {
             await err(action.error, error);
         }
-        
+
         DBS.callNextAction(command, message, args, index + 1);
     }
 };

@@ -1,8 +1,8 @@
 module.exports = {
     name: "Better Mods V2",
-    author: ["Discord Bot Studio", "STR1KE#6969"],
-    version: "1.0.0",
-    changelog: "Better Mods V2 ~ STR1KE#6969",
+    author: ["Discord Bot Studio", "STR1KE#6969", "@miroxik74"],
+    version: "1.0.1",
+    changelog: "Added retry when installing module failed.",
     isEvent: false,
     isResponse: false,
     isMod: false,
@@ -45,11 +45,15 @@ module.exports = {
                 } catch (error) {
                     try {
                         await installPackage(packageName);
+                        const modulePath = join(__dirname, "../node_modules", packageName);
+                        return require(modulePath);
                     } catch (err) {
-                        process.send(`Could not install <b>${packageName}</b> module`);
-                        console.error(err);
-                        DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
-                        return null;
+                        if (err) {
+                            console.error(err);
+                            process.send(`Could not install <b>${packageName}</b> module`);
+                            DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
+                            return null;
+                        }
                     }
                 }
             };
@@ -57,7 +61,7 @@ module.exports = {
 
         async function installPackage(packageName) {
             return new Promise((resolve, reject) => {
-                exec(`npm install ${packageName}`, (error, stdout, stderr) => {
+                execSync(`npm install ${packageName}`, (error, stdout, stderr) => {
                     if (error) {
                         console.error(`Error installing ${packageName}: ${error}`);
                         reject(error);
