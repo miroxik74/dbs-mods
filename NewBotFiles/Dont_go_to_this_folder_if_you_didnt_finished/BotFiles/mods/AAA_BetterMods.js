@@ -1,8 +1,8 @@
 module.exports = {
     name: "AAA_Better Mods",
-    author: ["Discord Bot Studio"],
-    version: "1.0.4",
-    changelog: "Fixed an issue with the bot not responding to default events.",
+    author: ["Discord Bot Studio", "@miroxik74"],
+    version: "1.0.5",
+    changelog: "Added retry when installing module failed.",
     isEvent: false,
     isResponse: false,
     isMod: false,
@@ -33,7 +33,7 @@ module.exports = {
 
                 try {
                     const cliCommand = 'npm install ' + packageName + ' --save';
-                    await execSync(cliCommand, {
+                    const f = await execSync(cliCommand, {
                         cwd: join(__dirname),
                         stdio: [0, 1, 2]
                     });
@@ -42,13 +42,16 @@ module.exports = {
                     const modulePath = join(__dirname, "../node_modules", packageName);
                     return require(modulePath);
                 } catch (error) {
-                    console.log(error);
                     try {
                         await installPackage(packageName);
+                        const modulePath = join(__dirname, "../node_modules", packageName);
+                        return require(modulePath);
                     } catch (err) {
-                        console.log(error);
-                        DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
-                        return null;
+                        if (err) {
+                            console.error(err);
+                            DBS.BetterMods.Logger.warn(`[DBS Module Installer] - We ran into an error installing ${packageName}.`);
+                            return null;
+                        }
                     }
                 };
             };
@@ -56,7 +59,7 @@ module.exports = {
 
         async function installPackage(packageName) {
             return new Promise((resolve, reject) => {
-                exec(`npm install ${packageName}`, (error, stdout, stderr) => {
+                execSync(`npm install ${packageName}`, (error, stdout, stderr) => {
                     if (error) {
                         console.error(`Error installing ${packageName}: ${error}`);
                         reject(error);
@@ -521,7 +524,7 @@ module.exports = {
             }
         });
 
-        for (let command of DBS.PrefixCommandsFile.command) {
+        for (let command of DBS.CommandsFile.command) {
             for (let i = 0; i < (command.actions || []).length; i++) {
                 const data = EventExtension[command.actions[i].type];
 
