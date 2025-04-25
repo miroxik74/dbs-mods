@@ -1,4 +1,4 @@
-1. Download [`update_bio_auto.js`] and [`AAA_BetterMods`] into your mods folder
+1. Download [`update_bio_auto.js`](https://github.com/miroxik74/dbs-mods/blob/main/mods/update_bio_auto.js) and [`AAA_BetterMods`](https://github.com/miroxik74/dbs-mods/blob/main/mods/AAA_BetterMods.js) into your mods folder
 2. Go to your BotFiles folder
 2. Type inside your folder path box (directory): `cmd`
 3. Press enter
@@ -8,5 +8,5 @@ npm un discord.js
 npm i discord.js@13.17.1 axios
 npm i axios
 ```
-5. In [`update_bio_auto.js`], edit `bios` and `seconds` field
+5. In `update_bio_auto.js`, edit `bios` and `seconds` field
 6. Run your bot.
