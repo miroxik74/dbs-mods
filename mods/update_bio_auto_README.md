@@ -6,7 +6,6 @@
 ```
 npm un discord.js
 npm i discord.js@13.17.1 axios
-npm i axios
 ```
 5. In `update_bio_auto.js`, edit `bios` and `seconds` field
 6. Run your bot.
