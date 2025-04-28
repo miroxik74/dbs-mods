@@ -41,7 +41,7 @@ partials: [
 ```
 
 5. Download those two files and add them to the `mods` folder:  
-- [`reaction_executor.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionAdd/reaction_executor.js) - the actual code that is executed when someone removed reaction
+- [`reaction_executor.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionAdd/reaction_executor.js) - the actual code that is executed when someone added reaction
 - [`reaction_loader.js`](https://github.com/miroxik74/dbs-mods/blob/main/client_events/messageReactionAdd/reaction_loader.js) - loader to fetch desired channel, message and reactions from it
 
 6. For unicode emoji, you can use:
