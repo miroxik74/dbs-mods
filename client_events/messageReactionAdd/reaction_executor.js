@@ -1,5 +1,5 @@
 module.exports = {
-    name: "messageReactionRemove",
+    name: "messageReactionAdd",
     author: [""],
     version: "1.0.0",
     changelog: "",
@@ -35,7 +35,7 @@ module.exports = {
                 if (emoji === em) {
                     const role = userHasReacted.guild.roles.cache.get(roleID);
                     if (role && userHasReacted) {
-                        await userHasReacted.roles.remove(role);
+                        await userHasReacted.roles.add(role);
                     }
                 }
 
