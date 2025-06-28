@@ -1,0 +1,2 @@
+### Initialization Error <module>
+To avoid such errors in your console, make sure you used the `events.json` file you have here, not the default one because for some reason it's missing more events with every update of the BSD app

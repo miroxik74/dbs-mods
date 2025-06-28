@@ -1,0 +1,23 @@
+{
+    "command": [
+        {
+            "name": "test",
+            "description": "Test the bot",
+            "ephemeral": true,
+            "options": []
+        },
+        {
+            "name": "say",
+            "description": "Test say command",
+            "ephemeral": true,
+            "options": [
+                {
+                    "name": "text",
+                    "description": "What you want to say?",
+                    "type": "STRING",
+                    "required": true
+                }
+            ]
+        }
+    ]
+}
