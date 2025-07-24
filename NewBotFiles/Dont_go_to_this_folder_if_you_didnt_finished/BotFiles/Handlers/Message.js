@@ -316,7 +316,7 @@ function ParseActionVariables(action, msg) {
                     Functions.getDefaultChannel(msg.guild)
                 );
                 newVal = newVal
-                    .replace("$$ServerIcon$$", msg.guild.iconURL)
+                    .replace("$$ServerIcon$$", msg.guild.iconURL())
                     .replace("$$MemberCount$$", msg.guild.memberCount.toString())
                     .replace("$$JoinedAt$$", msg.guild.joinedAt.toString())
                     .replace("$$ServerName$$", msg.guild.name)
@@ -339,7 +339,7 @@ function ParseActionVariables(action, msg) {
                         Functions.getDefaultChannel(msg.guild)
                     );
                     newVal = newVal
-                        .replace("$$ServerIcon$$", msg.guild.iconURL)
+                        .replace("$$ServerIcon$$", msg.guild.iconURL())
                         .replace("$$MemberCount$$", msg.guild.memberCount.toString())
                         .replace("$$JoinedAt$$", msg.guild.joinedAt.toString())
                         .replace("$$ServerName$$", msg.guild.name)

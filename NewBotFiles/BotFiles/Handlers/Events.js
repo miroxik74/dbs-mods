@@ -705,7 +705,7 @@ function ParseActionVariables(action) {
         var newVal = newaction[e];
         newVal = newVal.replace("$$DefaultChannel$$", Functions.getDefaultChannel(guild));
         newVal = newVal
-          .replace("$$ServerIcon$$", guild.iconURL)
+          .replace("$$ServerIcon$$", guild.iconURL())
           .replace("$$MemberCount$$", guild.memberCount.toString())
           .replace("$$JoinedAt$$", guild.joinedAt.toString())
           .replace("$$ServerName$$", guild.name)
@@ -719,7 +719,7 @@ function ParseActionVariables(action) {
           var newVal = child.value;
           newVal = newVal.replace("$$DefaultChannel$$", Functions.getDefaultChannel(guild));
           newVal = newVal
-            .replace("$$ServerIcon$$", guild.iconURL)
+            .replace("$$ServerIcon$$", guild.iconURL())
             .replace("$$MemberCount$$", guild.memberCount.toString())
             .replace("$$JoinedAt$$", guild.joinedAt.toString())
             .replace("$$ServerName$$", guild.name)
