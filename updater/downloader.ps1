@@ -10,6 +10,14 @@ $l0 = "$h/$mod/main"
 $rl = "$h/github$gh/releases/download"
 $LINK = "$l0/mods"
 
+$timestamp = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+$gcache = "$h/$mod/refs/heads/main/updater/downloader.ps1?t=$timestamp"
+try {
+    $webResponse = Invoke-WebRequest -Uri $gcache -UseBasicParsing -ErrorAction Stop
+} catch {
+    Write-Error "$($_.Exception.Message)"
+}
+
 function Cyan ($message) {
     if ($message) {
         Write-Host $message -ForegroundColor Cyan
@@ -74,6 +82,21 @@ function White ($message) {
     }
 }
 
+function WW {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string[]]$Messages
+    )
+
+    foreach ($message in $Messages) {
+        if ($message) {
+            White $message
+        } else {
+            White " "
+        }
+    }
+}
+
 function Error ($message) {
     if ($message) {
         Write-Error $message
@@ -90,11 +113,9 @@ function Read ($message) {
     }
 }
 
-$timestamp = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-$gcache = "$h/$mod/refs/heads/main/updater/downloader.ps1?t=$timestamp"
-try {
-    $webResponse = Invoke-WebRequest -Uri $gcache -UseBasicParsing -ErrorAction Stop
-} catch { }
+function Sleep ($timer) {
+    Start-Sleep -Seconds $timer
+}
 
 function Show-disclaimer {
     Cyan
@@ -114,7 +135,7 @@ function Show-disclaimer {
     Cyan
 }
 $main = Show-disclaimer
-Start-Sleep -Seconds 1
+Sleep 1
 Read "Press Enter to acknowledge and continue to the Menu..." 
 
 $modPath = Join-Path $mainpath "mods"
@@ -143,137 +164,20 @@ function Mpath {
     Cyan
 }
 
+function Show-Available {
+    $list = @("1. AAA_BetterMods", "2. APIMod", "3. AskChatGPT", "4. AuthorOnlyChannel", "5. AuthorOnlyVoiceChannel", "6. AwaitUserMessage", "7. BanAllMember", "8. BetterMods", "9. BetterModsV2", "10. BetterPing", "11. BotInfo", "12. BotSize", "13. BotSizeUpdate", "14. BotSystemInfo", "15. BotType", "16. CallEvent", "17. CaptonHook", "18. CategoryCreate", "19. ChangeServerIcon", "20. ChangeServerName", "21. ChannelProperties", "22. CheckChannelID", "23. CheckChannelName", "24. CheckCategoryID", "25. CheckIfRoleIsOnServer", "26. CheckRoleID", "27. CodeBlock", "28. Command", "29. CommandCooldown", "30. CommandDelete", "31. CommandMessageDelete", "32. ConsoleLog", "33. CopyChannel", "34. CreatedAt", "35. CreateCategory", "36. CreateFineTunedModel", "37. CreateGuildInvite", "38. Database", "39. DelAllChannels", "40. DelAllRoles", "41. DeleteMessageByID", "42. DeleteRoleFromServer", "43. EditChannelName", "44. EditChannelPermissions", "45. EditedAuthorOnlyChannel", "46. EditEmbed", "47. EditMsg", "48. EmbedPoll", "49. EmbedReply", "50. Emoji", "51. Eval", "52. FileSystem", "53. ForceBan", "54. forEach", "55. GetInviteCount", "56. GetMentionedChannel", "57. GetMentionedRole", "58. GetServerAmount", "59. GetServerInfo", "60. GrabCountOfMessages", "61. Guilds", "62. IfNSFW", "63. ifargumentsarenone", "64. IfStatement", "65. InvLink", "66. JumpToNode", "67. KickAllMember", "68. LastMessageReaction", "69. Leaderboard", "70. LeaveServer", "71. LevelCard", "72. LinkChecker", "73. Lockdown", "74. LockOneChannel", "75. lowercase", "76. MemeVariable", "77. MessageReply", "78. MoreStatus", "79. Nickname", "80. Notes", "81. OFF", "82. OneMemberChannelPerms", "83. PinMod", "84. PingMessage", "85. Purge", "86. RandomGuildMember", "87. RandomLetters", "88. RandomUser", "89. RandomUserWithRole", "90. RemoveReactions", "91. RenameBot", "92. ReplyMessage", "93. sRoulette", "94. SaveMessage", "95. SendDM", "96. SendMsgToGuild", "97. ServerInfo", "98. SetChannelPos", "99. SetNSFW", "100. SetNickname", "101. slowmode", "102. StartWithCMD", "103. StopAction", "104. Threads", "105. TicketMod", "106. Timeout", "107. Tofixed", "108. Transcript", "109. TTSMessage", "110. TwitchLiveNotifier", "111. Unban", "112. UnlockOneChannel", "113. Unpinall", "114. UpdateBio", "115. update_bio_auto", "116. UpTime", "117. uppercase", "118. UserInfo", "119. UserLimit", "120. UserList", "121. UserList2", "122. VoiceMove", "123. VoiceMute", "124. Webhook", "125. Zoom")
+    foreach ($data in $list) {
+        WW "$data"
+    }
+}
+
 function Show-SubMenuTasks {
     do {
         Clear-Host
         Cyan
         Green "--- Separated mods ---"
         Cyan
-        White "1. AAA_BetterMods"
-        White "2. APIMod"
-        White "3. AskChatGPT"
-        White "4. AuthorOnlyChannel"
-        White "5. AuthorOnlyVoiceChannel"
-        White "6. AwaitUserMessage"
-        White "7. BanAllMember"
-        White "8. BetterMods"
-        White "9. BetterModsV2"
-        White "10. BetterPing"
-        White "11. BotInfo"
-        White "12. BotSize"
-        White "13. BotSizeUpdate"
-        White "14. BotSystemInfo"
-        White "15. BotType"
-        White "16. CallEvent"
-        White "17. CaptonHook"
-        White "18. CategoryCreate"
-        White "19. ChangeServerIcon"
-        White "20. ChangeServerName"
-        White "21. ChannelProperties"
-        White "22. CheckChannelID"
-        White "23. CheckChannelName"
-        White "24. CheckCategoryID"
-        White "25. CheckIfRoleIsOnServer"
-        White "26. CheckRoleID"
-        White "27. CodeBlock"
-        White "28. Command"
-        White "29. CommandCooldown"
-        White "30. CommandDelete"
-        White "31. CommandMessageDelete"
-        White "32. ConsoleLog"
-        White "33. CopyChannel"
-        White "34. CreatedAt"
-        White "35. CreateCategory"
-        White "36. CreateFineTunedModel"
-        White "37. CreateGuildInvite"
-        White "38. Database"
-        White "39. DelAllChannels"
-        White "40. DelAllRoles"
-        White "41. DeleteMessageByID"
-        White "42. DeleteRoleFromServer"
-        White "43. EditChannelName"
-        White "44. EditChannelPermissions"
-        White "45. EditedAuthorOnlyChannel"
-        White "46. EditEmbed"
-        White "47. EditMsg"
-        White "48. EmbedPoll"
-        White "49. EmbedReply"
-        White "50. Emoji"
-        White "51. Eval"
-        White "52. FileSystem"
-        White "53. ForceBan"
-        White "54. forEach"
-        White "55. GetInviteCount"
-        White "56. GetMentionedChannel"
-        White "57. GetMentionedRole"
-        White "58. GetServerAmount"
-        White "59. GetServerInfo"
-        White "60. GrabCountOfMessages"
-        White "61. Guilds"
-        White "62. IfNSFW"
-        White "63. ifargumentsarenone"
-        White "64. IfStatement"
-        White "65. InvLink"
-        White "66. JumpToNode"
-        White "67. KickAllMember"
-        White "68. LastMessageReaction"
-        White "69. Leaderboard"
-        White "70. LeaveServer"
-        White "71. LevelCard"
-        White "72. LinkChecker"
-        White "73. Lockdown"
-        White "74. LockOneChannel"
-        White "75. lowercase"
-        White "76. MemeVariable"
-        White "77. MessageReply"
-        White "78. MoreStatus"
-        White "79. Nickname"
-        White "80. Notes"
-        White "81. OFF"
-        White "82. OneMemberChannelPerms"
-        White "83. PinMod"
-        White "84. PingMessage"
-        White "85. Purge"
-        White "86. RandomGuildMember"
-        White "87. RandomLetters"
-        White "88. RandomUser"
-        White "89. RandomUserWithRole"
-        White "90. RemoveReactions"
-        White "91. RenameBot"
-        White "92. ReplyMessage"
-        White "93. sRoulette"
-        White "94. SaveMessage"
-        White "95. SendDM"
-        White "96. SendMsgToGuild"
-        White "97. ServerInfo"
-        White "98. SetChannelPos"
-        White "99. SetNSFW"
-        White "100. SetNickname"
-        White "101. slowmode"
-        White "102. StartWithCMD"
-        White "103. StopAction"
-        White "104. Threads"
-        White "105. TicketMod"
-        White "106. Timeout"
-        White "107. Tofixed"
-        White "108. Transcript"
-        White "109. TTSMessage"
-        White "110. TwitchLiveNotifier"
-        White "111. Unban"
-        White "112. UnlockOneChannel"
-        White "113. Unpinall"
-        White "114. UpdateBio"
-        White "115. update_bio_auto"
-        White "116. UpTime"
-        White "117. uppercase"
-        White "118. UserInfo"
-        White "119. UserLimit"
-        White "120. UserList"
-        White "121. UserList2"
-        White "122. VoiceMove"
-        White "123. VoiceMute"
-        White "124. Webhook"
-        White "125. Zoom"
+        Show-Available
         Magenta "B. Back to main menu"
         Cyan
 
@@ -288,13 +192,13 @@ function Show-SubMenuTasks {
         if ($rawSelections.Count -gt $selectedOptions.Count) {
             Cyan
             DarkGray "Note: Duplicate options were found and removed from your selection."
-            Start-Sleep -Seconds 1 
+            Sleep 1
         }
 
         if ($selectedOptions.Count -eq 0) {
             Cyan
             Yellow "No options selected. Please try again."
-            Start-Sleep -Seconds 1
+            Sleep 1
             continue
         }
 
@@ -687,7 +591,7 @@ function Show-SubMenuTasks {
                     Red "Returning to Main Menu..." 
                     Cyan
                     $backToMainMenu = $true
-                    Start-Sleep -Seconds 3
+                    Sleep 3
                     Show-Menu
                     break
                 }
@@ -697,21 +601,21 @@ function Show-SubMenuTasks {
             }
         }
 
+        if ($invalidOptionsFound.Count -gt 0) {
+            DarkGray "Ignored invalid option(s): $($invalidOptionsFound -join ', ')."
+            Cyan
+            Sleep 1
+        }
+
         if (!$dorequest) {
             Green "Completed."
             Cyan
         }
 
-        if ($invalidOptionsFound.Count -gt 0) {
-            DarkYellow "Ignored invalid option(s): $($invalidOptionsFound -join ', ')."
-            Cyan
-            Start-Sleep -Seconds 1
-        }
-
         if (-not $backToMainMenu) { 
             if ($selectedOptions.Count -gt 0 -and $option -ne "B") {
                 Read "Press Enter to continue..."
-                Start-Sleep -Seconds 1
+                Sleep 1
             }
         }
 
