@@ -792,7 +792,7 @@ while ($true) {
             Yellow "Processing..."
             $geterr = $false
             $file = "all_mods"
-            $url = "$rl/mods/$file.zip"
+            $url = "$rl/mods/all_mods.zip"
             $outputPath = Join-Path $modPath "$file.zip"
 
             try {
