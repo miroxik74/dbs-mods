@@ -791,9 +791,9 @@ while ($true) {
 
             Yellow "Processing..."
             $geterr = $false
-            $file = "mods"
+            $file = "all_mods"
             $url = "$rl/mods/$file.zip"
-            $outputPath = Join-Path $modPath "all_$file.zip"
+            $outputPath = Join-Path $modPath "$file.zip"
 
             try {
                 Invoke-WebRequest -Uri $url -OutFile $outputPath -UseBasicParsing
