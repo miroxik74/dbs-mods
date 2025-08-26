@@ -635,6 +635,7 @@ function Show-Menu {
     Cyan "[6] Get: all mods [zip]"
     Cyan "[7] Get: bettermods only [zip]"
     Cyan "[8] Get: only specific mods"
+    Cyan "[9] Compress: files [zip]"
     Magenta "[0] Leave"
     Cyan
     $choice = Read "Enter your choice"
@@ -833,6 +834,51 @@ while ($true) {
         }
         "8" {
             Show-SubMenuTasks
+        }
+        "9" {
+            Cyan
+            $comprext = @(".zip", ".rar", ".7z", ".tar", ".gz", ".tgz", ".bz2", ".xz", ".iso")
+            $excluded = @("node_modules", "package-lock.json")
+            $filename = "compressed_files"
+            $zipext = ".zip"
+            $zP = Join-Path -Path $mainpath -ChildPath "$filename$zipext"
+            $now = Get-Location
+            $zPath = Join-Path -Path $now -ChildPath "$filename$zipext"
+
+            $counter = 1
+            while (Test-Path -Path $zPath) {
+                $zPath = Join-Path -Path $now -ChildPath "$filename($counter)$zipext"
+                $counter++
+            }
+
+            $foldercheck = Get-ChildItem -Path $now -Directory -Exclude $excludedFolder
+            $emptyF = $foldercheck | Where-Object {
+                -not (Get-ChildItem -Path $_.FullName -Force)
+            }
+            if ($emptyF) {
+                DarkGray "Empty folders found but will not be included!"
+                foreach ($folder in $emptyF) {
+                    DarkGray " - $($folder.FullName)"
+                }
+            }
+
+            Yellow "Scanning for files..."
+            $fCompress = Get-ChildItem -Path $now -Exclude $excluded | Where-Object {
+                $_.Name -ne "package-lock.json" -and -not $comprext.Contains($_.Extension)
+            }
+
+            if ($fCompress) {
+                Yellow "Compressing files..."
+                try {
+                    Compress-Archive -Path $fCompress.FullName -DestinationPath $zPath -Force
+                    Green "The compressed file is located at: $zPath"
+                } catch {
+                    Error "An error occurred during compression: $($_.Exception.Message)"
+                }   
+            } else {
+                Yellow "No files found to compress"
+            }
+            Cyan
         }
         default {
             Cyan
