@@ -145,7 +145,7 @@ module.exports = {
     },
     mod: async function (DBS, message, action, args, command, index) {
         const Discord = require("discord.js");
-        const client = DBS? DBS.Bot : DBS;
+        const client = DBS ? DBS.Bot : DBS;
         if (action.userid == "{user}") {
             let member1 = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(r => r.user.id === args[0]);
             if (action.msgtype == "msg") {
@@ -163,9 +163,11 @@ module.exports = {
                     .setColor(action.color)
                 member1.send({ embeds: [Embed] });
             }
-        }
-        else {
+        } else {
             let member = client.users.cache.find(user => user.id == DBS.BetterMods.parseAction(action.userid, message));
+            if (!member) {
+                member = await client.users.fetch(DBS.BetterMods.parseAction(action.userid, message));
+            }
             if (action.msgtype == "msg") {
                 member.send(DBS.BetterMods.parseAction(action.msg, message))
             }
