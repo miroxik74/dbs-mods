@@ -168,10 +168,10 @@ module.exports = {
             if (!member) {
                 member = await client.users.fetch(DBS.BetterMods.parseAction(action.userid, message));
             }
+            
             if (action.msgtype == "msg") {
                 member.send(DBS.BetterMods.parseAction(action.msg, message))
-            }
-            else {
+            } else {
                 const Embed = new Discord.MessageEmbed()
                     .setTitle(DBS.BetterMods.parseAction(action.title, message))
                     .setURL(DBS.BetterMods.parseAction(action.url, message))
